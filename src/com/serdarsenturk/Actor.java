@@ -1,22 +1,23 @@
 package com.serdarsenturk;
 
+import java.security.KeyException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Actor {
-    private int actorId;
+    private int id;
     private String name;
     private int age;
-    private HashMap<String, Movie> movies;
+    private HashMap<Integer, Movie> movies;
 
-    public Actor(int actorId, String name, int age){
-        this.actorId = actorId;
+    public Actor(int id, String name, int age){
+        this.id = id;
         this.name = name;
         this.age = age;
         this.movies = new HashMap<>();
     }
 
-    public String getName(){
+    public String getActorName(){
         return this.name;
     }
 
@@ -24,8 +25,8 @@ public class Actor {
         return this.age;
     }
 
-    public int getActorId(){
-        return this.actorId;
+    public int getId(){
+        return this.id;
     }
 
     public Iterable<Movie> getMovies(){
@@ -33,7 +34,11 @@ public class Actor {
         return new ArrayList<>(actorsDicValues);
     }
 
-    public void addMovies(Movie movie){
-        this.movies.put(movie.getName(), movie);
+    public void addMovies(Movie movie) throws KeyException {
+        if(movies.containsKey(movie.getId())){
+            return;
+        }
+        this.movies.put(movie.getId(), movie);
+        movie.addActor(this);
     }
 }
