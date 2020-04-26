@@ -8,12 +8,14 @@ public class Movie{
     private String name;
     private int price;
     private HashMap<Integer, Comment> comments;
+    private HashMap<Integer, Actor> actors;
     private Genre genre;
 
     public Movie(String name, Genre genre){
         this.name = name;
         this.genre = genre;
         this.comments = new HashMap<>();
+        this.actors = new HashMap<>();
     }
 
     public String getName(){
@@ -30,9 +32,7 @@ public class Movie{
 
     public Iterable<Comment> getComments(){
         var commentsDictValues = this.comments.values();
-        var commentArray = new ArrayList<>(commentsDictValues);
-
-        return commentArray;
+        return new ArrayList<>(commentsDictValues);
     }
 
     public void addComment(Comment comment) throws KeyException {
@@ -49,6 +49,17 @@ public class Movie{
         }
 
         this.comments.put(comment.getId(), comment);
+    }
+    public Iterable<Actor> getActors(){
+        var actorsDictValues = this.actors.values();
+        return new ArrayList<>(actorsDictValues);
+    }
+
+    public void addActor(Actor actor) throws KeyException {
+        if(this.actors.containsKey(actor.getActorId())){
+            throw new KeyException("Actor zaten var");
+        }
+        this.actors.put(actor.getActorId(), actor);
     }
 
     public void setPrice(int price){
