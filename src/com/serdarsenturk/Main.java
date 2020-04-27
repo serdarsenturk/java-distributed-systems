@@ -10,10 +10,15 @@ public class Main {
         var movie1 = new Movie(100, "A", Genre.Action);
         var actor1 = new Actor(1, "Serdar", 22);
         var actor2 = new Actor(2, "Engin", 31);
+        var movie2 = new ShortMovie(101, "B", Genre.Fiction, "Khan");
+        var movie3 = new LongTimeMovie(02, "C", Genre.Action, 120);
+        var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5);
 
         try {
             movie1.addActor(actor1);
             movie1.addActor(actor2);
+            movie2.addCompetition("K");
+            movie2.addCompetition("M");
         }
         catch (KeyException ex){
             System.out.println(ex.getMessage());
@@ -28,9 +33,17 @@ public class Main {
         for(var actor : actor1.getMovies()){
             System.out.println("Actor1's movie id: " + actor.getId());
         }
+
         for(var actor : actor2.getMovies()){
             System.out.println("Actor2's movie id: " + actor.getId());
         }
+
+        for(String comp : movie2.getCompetitions()){
+            System.out.println("Comp: " + comp);
+        }
+
+        System.out.println("Movie3's time length: " + movie3.getTimeLength());
+        System.out.println("Movie4's season number: " + movie4.getSeasonNumber());
 /*
         var myMovie = new Movie("Engin", Genre.Action);
 
