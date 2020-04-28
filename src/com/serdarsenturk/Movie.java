@@ -10,11 +10,15 @@ public class Movie{
     private HashMap<Integer, Comment> comments;
     private HashMap<Integer, Actor> actors;
     private Genre genre;
+    private String author;
+    private String title;
 
-    public Movie(int id, String name, Genre genre){
+    public Movie(int id, String name, Genre genre, String title, String author){
         this.id = id;
         this.name = name;
         this.genre = genre;
+        this.author = author;
+        this.title = title;
         this.comments = new HashMap<>();
         this.actors = new HashMap<>();
     }
@@ -29,6 +33,10 @@ public class Movie{
 
     public int getPrice(){
         return price;
+    }
+
+    public String getAuthor(){
+        return this.author;
     }
 
     public int getCommentSize(){
@@ -66,6 +74,10 @@ public class Movie{
         }
         this.actors.put(actor.getId(), actor);
         actor.addMovies(this);
+    }
+
+    public String getTitle(){
+        return this.title;
     }
 
     public void setPrice(int price){
