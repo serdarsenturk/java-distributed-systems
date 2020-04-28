@@ -10,18 +10,28 @@ public class Main {
         var movie1 = new Movie(100, "A", Genre.Action);
         var actor1 = new Actor(1, "Serdar", 22);
         var actor2 = new Actor(2, "Engin", 31);
+        var actor3 = new Actor(3, "Görkem", 21);
         var movie2 = new ShortMovie(101, "B", Genre.Fiction, "Khan");
         var movie3 = new LongTimeMovie(02, "C", Genre.Action, 120);
-        var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5);
+        var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5, 12);
 
         try {
             movie1.addActor(actor1);
             movie1.addActor(actor2);
+            movie3.addActor(actor3);
             movie2.addCompetition("K");
             movie2.addCompetition("M");
         }
         catch (KeyException ex){
             System.out.println(ex.getMessage());
+        }
+
+        for(Actor actor: movie3.getActors()){
+            System.out.println("Actor added to Longtime movie with the name: " + actor.getActorName());
+        }
+
+        for(Actor actor : movie1.getActors()){
+            System.out.println("Actor added to movie1 with the name: " + actor.getActorName());
         }
 
         for(var movie : movie1.getActors()){
@@ -43,7 +53,8 @@ public class Main {
         }
 
         System.out.println("Movie3's time length: " + movie3.getTimeLength());
-        System.out.println("Movie4's season number: " + movie4.getSeasonNumber());
+        System.out.println("Movie4's season number: " + movie4.getSeasons());
+        System.out.println("Movie4's season number: " + movie4.getEpisodes());
 /*
         var myMovie = new Movie("Engin", Genre.Action);
 
