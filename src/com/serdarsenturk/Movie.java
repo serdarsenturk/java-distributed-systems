@@ -69,11 +69,16 @@ public abstract class Movie{
     }
 
     public void addActor(Actor actor) throws KeyException {
-        if(this.actors.containsKey(actor.getId())){
+        if(isActorExists(actor)){
             return;
         }
+
         this.actors.put(actor.getId(), actor);
         actor.addMovies(this);
+    }
+
+    public Boolean isActorExists(Actor actor){
+        return this.actors.containsKey(actor.getId());
     }
 
     public abstract String getTitle();

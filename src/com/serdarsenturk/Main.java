@@ -18,6 +18,8 @@ public class Main {
             //movie1.addActor(actor1);
             //movie1.addActor(actor2);
             movie3.addActor(actor3);
+            movie4.addActor(actor1);
+            movie2.addActor(actor1);
             movie2.addCompetition("K");
             movie2.addCompetition("M");
         }
@@ -25,14 +27,7 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
-        for(Actor actor: movie3.getActors()){
-            System.out.println("Actor added to Longtime movie with the name: " + actor.getActorName());
-        }
-
-        /*for(Actor actor : movie1.getActors()){
-            System.out.println("Actor added to movie1 with the name: " + actor.getActorName());
-        }
-
+        /*
         for(var movie : movie1.getActors()){
             System.out.println("Actor id: " + movie.getId());
             System.out.println("Actor name: " + movie.getActorName());

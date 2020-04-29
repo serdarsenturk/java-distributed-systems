@@ -1,5 +1,6 @@
 package com.serdarsenturk;
 
+import java.security.KeyException;
 import java.util.HashMap;
 
 public class SeriesMovie extends Movie {
@@ -21,5 +22,14 @@ public class SeriesMovie extends Movie {
 
     public String getTitle(){
         return "Series Film" + this.title;
+    }
+
+    @Override
+    public void addActor(Actor actor) throws KeyException {
+        if(isActorExists(actor)){
+            System.out.println("Actor with name: " + actor.getActorName() + " is added to SeriesMovie");
+        }
+
+        super.addActor(actor);
     }
 }
