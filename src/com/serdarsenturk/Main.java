@@ -7,7 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var movie1 = new Movie(100, "A", Genre.Action, "XA", "YA");
         var actor1 = new Actor(1, "Serdar", 22);
         var actor2 = new Actor(2, "Engin", 31);
         var actor3 = new Actor(3, "Görkem", 21);
@@ -16,8 +15,8 @@ public class Main {
         var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5, 12, "XD", "YD");
 
         try {
-            movie1.addActor(actor1);
-            movie1.addActor(actor2);
+            //movie1.addActor(actor1);
+            //movie1.addActor(actor2);
             movie3.addActor(actor3);
             movie2.addCompetition("K");
             movie2.addCompetition("M");
@@ -30,7 +29,7 @@ public class Main {
             System.out.println("Actor added to Longtime movie with the name: " + actor.getActorName());
         }
 
-        for(Actor actor : movie1.getActors()){
+        /*for(Actor actor : movie1.getActors()){
             System.out.println("Actor added to movie1 with the name: " + actor.getActorName());
         }
 
@@ -39,14 +38,17 @@ public class Main {
             System.out.println("Actor name: " + movie.getActorName());
             System.out.println("Actor age: " + movie.getAge());
 
+
         }
         for(var actor : actor1.getMovies()){
             System.out.println("Actor1's movie id: " + actor.getId());
         }
+        */
 
         for(var actor : actor2.getMovies()){
             System.out.println("Actor2's movie id: " + actor.getId());
         }
+
 
         for(String comp : movie2.getCompetitions()){
             System.out.println("Comp: " + comp);

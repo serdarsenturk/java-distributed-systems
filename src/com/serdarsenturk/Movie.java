@@ -3,7 +3,7 @@ package com.serdarsenturk;
 import java.security.KeyException;
 import java.util.*;
 
-public class Movie{
+public abstract class Movie{
     private int id;
     private String name;
     private int price;
@@ -32,7 +32,7 @@ public class Movie{
     }
 
     public int getPrice(){
-        return price;
+        return this.price;
     }
 
     public String getAuthor(){
@@ -76,9 +76,7 @@ public class Movie{
         actor.addMovies(this);
     }
 
-    public String getTitle(){
-        return this.title;
-    }
+    public abstract String getTitle();
 
     public void setPrice(int price){
         this.price = price;
