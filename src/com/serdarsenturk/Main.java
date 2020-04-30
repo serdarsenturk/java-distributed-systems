@@ -11,6 +11,7 @@ public class Main {
         var actor2 = new Actor(2, "Engin", 31);
         var actor3 = new Actor(3, "Görkem", 21);
         var movie2 = new ShortMovie(101, "B", Genre.Fiction, "XB", "YB", 70);
+
         var movie3 = new LongTimeMovie(02, "C", Genre.Action, 120, "XC", "YC");
         var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5, 12, "XD", "YD");
 
@@ -27,6 +28,8 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
+        var nMovie = new DummyMovieService();
+        System.out.println(nMovie);
         /*
         for(var movie : movie1.getActors()){
             System.out.println("Actor id: " + movie.getId());
@@ -101,3 +104,4 @@ public class Main {
     }
 //    t1.setActors(actors1);
 }
+

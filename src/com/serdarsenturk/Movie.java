@@ -77,7 +77,7 @@ public abstract class Movie{
         actor.addMovies(this);
     }
 
-    public Boolean isActorExists(Actor actor){
+    protected Boolean isActorExists(Actor actor){
         return this.actors.containsKey(actor.getId());
     }
 

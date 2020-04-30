@@ -2,7 +2,7 @@ package com.serdarsenturk;
 
 import java.util.ArrayList;
 
-public class ShortMovie extends Movie{
+public class ShortMovie extends Movie {
     private String title;
     private int timeLength;
     private ArrayList<String> competitions;
