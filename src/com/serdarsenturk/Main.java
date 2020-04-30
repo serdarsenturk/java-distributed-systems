@@ -27,10 +27,6 @@ public class Main {
 
         var nMovie = new DummyMovieService();
         System.out.println(nMovie);
-
-        for(var actor : actor2.getMovies()){
-            System.out.println("Actor2's movie id: " + actor.getId());
-        }
     }
 }
 
