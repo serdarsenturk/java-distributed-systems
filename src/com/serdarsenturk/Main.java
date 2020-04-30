@@ -12,7 +12,7 @@ public class Main {
         var actor3 = new Actor(3, "Görkem", 21);
         var movie2 = new ShortMovie(101, "B", Genre.Fiction, "XB", "YB", 70);
 
-        var movie3 = new LongTimeMovie(02, "C", Genre.Action, 120, "XC", "YC");
+        var movie3 = new LongTimeMovie(102, "C", Genre.Action, 120, "XC", "YC");
         var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5, 12, "XD", "YD");
         try {
             movie3.addActor(actor3);
@@ -25,8 +25,12 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
-        var nMovie = new DummyMovieService();
-        System.out.println(nMovie);
+        var movie6 = new DummyMovieService();
+        movie6.getAll();
+        movie6.getById(103);
+        movie6.deleteById(102);
+        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
+
     }
 }
 
