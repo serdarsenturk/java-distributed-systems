@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "92e479a2-8211-4a14-8f1a-72cbffc7408a",
+		"name": "Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/550?api_key=7ebb0e71393d7dc09615bd2ddb46e652\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"550"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "7ebb0e71393d7dc09615bd2ddb46e652\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

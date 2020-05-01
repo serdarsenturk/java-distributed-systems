@@ -29,7 +29,6 @@ public class Main {
         movie6.getById(103);
         movie6.deleteById(102);
         movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
-        System.out.println("Naber");
     }
 }
 
