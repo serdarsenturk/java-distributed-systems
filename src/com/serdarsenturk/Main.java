@@ -2,7 +2,6 @@ package com.serdarsenturk;
 import com.serdarsenturk.Movie;
 
 import java.security.KeyException;
-import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
