@@ -1,6 +1,10 @@
 package com.serdarsenturk;
 import com.serdarsenturk.Movie;
 
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.security.KeyException;
 public class Main {
 
@@ -29,6 +33,15 @@ public class Main {
         movie6.getById(103);
         movie6.deleteById(102);
         movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest req = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.themoviedb.org/3/movie/550?api_key=7ebb0e71393d7dc09615bd2ddb46e652"))
+                .build();
+        client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
     }
 }
 
