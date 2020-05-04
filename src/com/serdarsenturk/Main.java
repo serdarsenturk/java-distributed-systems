@@ -36,7 +36,9 @@ public class Main {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest req = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.themoviedb.org/3/movie/550?api_key=7ebb0e71393d7dc09615bd2ddb46e652"))
+                .uri(URI.create("https://api.themoviedb.org/3/movie/550"))
+                .header("Authorization", "default")
+                .header("content-type", "application/json;charset=utf-8")
                 .build();
         client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
                 .thenApply(HttpResponse::body)
