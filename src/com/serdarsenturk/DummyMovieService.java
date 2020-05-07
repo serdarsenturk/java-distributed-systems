@@ -16,15 +16,6 @@ public class DummyMovieService implements IMovieService {
 
     public Iterable<Movie> getAll() {
 
-        HttpClient client = HttpClient.newHttpClient();
-
-        HttpRequest req = HttpRequest.newBuilder().
-                uri(URI.create("https://api.themoviedb.org/3/account/9303133/favorite/movies?api_key=1412bb0910c171bc419e90e2f68f47e6&session_id=02ac7daf8691a1f5a1a772052c21ed3b768b6688&language=en-US&sort_by=created_at.asc&page=1")).
-                build();
-        var movieCTO = client.sendAsync(req, HttpResponse.BodyHandlers.ofByteArray())
-                .thenApply(HttpResponse::body)
-                .thenAccept(System.out::println)
-                .join();
         return new ArrayList<>();
     }
 
