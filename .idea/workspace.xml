@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1bd8df-94bc-4e80-b16f-3fad9bec2982" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core_jackson_databind_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Projects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/DummyMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/DummyMovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/LongTimeMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/LongTimeMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/SeriesMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/SeriesMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/ShortMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/ShortMovie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +125,7 @@
       <updated>1587770591267</updated>
       <workItem from="1587770593733" duration="33009000" />
       <workItem from="1588187050196" duration="25778000" />
-      <workItem from="1588803493652" duration="3018000" />
+      <workItem from="1588803493652" duration="3117000" />
     </task>
     <servers />
   </component>
