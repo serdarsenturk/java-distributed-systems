@@ -124,8 +124,12 @@
       <option name="presentableId" value="Default" />
       <updated>1587770591267</updated>
       <workItem from="1587770593733" duration="33009000" />
+<<<<<<< HEAD
       <workItem from="1588187050196" duration="25778000" />
       <workItem from="1588803493652" duration="3117000" />
+=======
+      <workItem from="1588187050196" duration="11749000" />
+>>>>>>> parent of af36e4f... Create headers and use beaerer authentication
     </task>
     <servers />
   </component>
@@ -145,6 +149,7 @@
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="100" y="123" width="1080" height="501" key="DiffContextDialog/0.23.1280.701@0.23.1280.701" timestamp="1587787882323" />
+<<<<<<< HEAD
     <state width="1238" height="177" key="GridCell.Tab.0.bottom" timestamp="1588810392818">
       <screen x="0" y="23" width="1280" height="719" />
     </state>
@@ -200,6 +205,25 @@
     </state>
     <state x="366" y="274" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.701@0.23.1280.701" timestamp="1588702551469" />
     <state x="445" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588714716887">
+=======
+    <state width="1238" height="172" key="GridCell.Tab.0.bottom" timestamp="1588367912890">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state width="1238" height="172" key="GridCell.Tab.0.bottom/0.23.1280.701@0.23.1280.701" timestamp="1588367912890" />
+    <state width="1238" height="172" key="GridCell.Tab.0.center" timestamp="1588367912888">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state width="1238" height="172" key="GridCell.Tab.0.center/0.23.1280.701@0.23.1280.701" timestamp="1588367912888" />
+    <state width="1238" height="172" key="GridCell.Tab.0.left" timestamp="1588367912887">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state width="1238" height="172" key="GridCell.Tab.0.left/0.23.1280.701@0.23.1280.701" timestamp="1588367912887" />
+    <state width="1238" height="172" key="GridCell.Tab.0.right" timestamp="1588367912889">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state width="1238" height="172" key="GridCell.Tab.0.right/0.23.1280.701@0.23.1280.701" timestamp="1588367912889" />
+    <state x="333" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1588187052170">
+>>>>>>> parent of af36e4f... Create headers and use beaerer authentication
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="445" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.701@0.23.1280.701" timestamp="1588714716887" />

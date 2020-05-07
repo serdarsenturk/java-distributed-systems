@@ -37,6 +37,17 @@ public class Main {
 //        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
 
 
+<<<<<<< HEAD
+=======
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest req = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.themoviedb.org/3/movie/550?api_key=7ebb0e71393d7dc09615bd2ddb46e652"))
+                .build();
+        client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
+>>>>>>> parent of af36e4f... Create headers and use beaerer authentication
     }
 }
 
