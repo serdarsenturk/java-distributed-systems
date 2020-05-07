@@ -5,17 +5,29 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DummyMovieService implements IMovieService {
 
 
-    public Iterable<Movie> getAll() {
+    public Iterable<Movie> getAll() throws IOException, InterruptedException {
 
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest req = HttpRequest.newBuilder().
+                uri(URI.create("")).
+                build();
+
+        client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
         return new ArrayList<>();
     }
 
