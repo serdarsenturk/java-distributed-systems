@@ -8,8 +8,8 @@ public class SeriesMovie extends Movie {
     private int episodes;
     private String title;
 
-    public  SeriesMovie(int id, String name, Genre genre, int seasons, int episodes, String title, String author){
-        super(id, name, genre, title, author);
+    public  SeriesMovie(int id, String originalTitle, Genre genre, int seasons, int episodes, String title){
+        super(id, originalTitle, genre, title);
         this.episodes = episodes;
         this.seasons = seasons;
     }

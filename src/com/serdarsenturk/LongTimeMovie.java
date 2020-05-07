@@ -4,8 +4,8 @@ public class LongTimeMovie extends Movie {
     private int timeLength;
     private String title;
 
-    public LongTimeMovie(int id, String name, Genre genre, int timeLength, String title, String author){
-        super(id, name, genre, title, author);
+    public LongTimeMovie(int id, String originalTitle, Genre genre, int timeLength, String title){
+        super(id, originalTitle, genre, title);
         this.timeLength = timeLength;
     }
 

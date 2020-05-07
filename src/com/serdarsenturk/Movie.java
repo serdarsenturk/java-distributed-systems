@@ -5,19 +5,18 @@ import java.util.*;
 
 public abstract class Movie{
     private int id;
-    private String name;
-    private int price;
+    private String originalTitle;
+    private int budget;
     private HashMap<Integer, Comment> comments;
     private HashMap<Integer, Actor> actors;
     private Genre genre;
     private String author;
     private String title;
 
-    public Movie(int id, String name, Genre genre, String title, String author){
+    public Movie(int id, String originalTitle, Genre genre, String title){
         this.id = id;
-        this.name = name;
+        this.originalTitle = originalTitle;
         this.genre = genre;
-        this.author = author;
         this.title = title;
         this.comments = new HashMap<>();
         this.actors = new HashMap<>();
@@ -27,12 +26,12 @@ public abstract class Movie{
         return this.id;
     }
 
-    public String getName(){
-        return this.name;
+    public String getOriginalTitle(){
+        return this.originalTitle;
     }
 
-    public int getPrice(){
-        return this.price;
+    public int getBudget(){
+        return this.budget;
     }
 
     public String getAuthor(){
@@ -83,11 +82,11 @@ public abstract class Movie{
 
     public abstract String getTitle();
 
-    public void setPrice(int price){
-        this.price = price;
+    public void setBudget(int budget){
+        this.budget = budget;
     }
 
-    public int getNextMinimumPrice(){
-        return this.price + this.price * 10 / 100;
+    public int getNextMinimumBudget(){
+        return this.budget + this.budget * 10 / 100;
     }
 }

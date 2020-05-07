@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1bd8df-94bc-4e80-b16f-3fad9bec2982" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core_jackson_databind_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/DummyMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/DummyMovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/LongTimeMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/LongTimeMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/SeriesMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/SeriesMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/serdarsenturk/ShortMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/serdarsenturk/ShortMovie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +35,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Java-Projects" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -46,6 +57,18 @@
       </set>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="pluginUpdatePolicy" value="UPDATE" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -57,6 +80,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -65,6 +93,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/.idea/codeStyles" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -94,7 +132,8 @@
       <option name="presentableId" value="Default" />
       <updated>1587770591267</updated>
       <workItem from="1587770593733" duration="33009000" />
-      <workItem from="1588187050196" duration="13801000" />
+      <workItem from="1588187050196" duration="25778000" />
+      <workItem from="1588803493652" duration="3018000" />
     </task>
     <servers />
   </component>
@@ -106,30 +145,72 @@
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="453" y="90" key="#com.intellij.ide.util.MemberChooser/0.23.1280.701@0.23.1280.701" timestamp="1588261419313" />
+    <state x="402" y="96" key="DetectedRootsChooserDialog" timestamp="1588702316991">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state x="402" y="96" key="DetectedRootsChooserDialog/0.23.1280.701@0.23.1280.701" timestamp="1588702316991" />
     <state x="100" y="123" width="1080" height="501" key="DiffContextDialog" timestamp="1587787882323">
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="100" y="123" width="1080" height="501" key="DiffContextDialog/0.23.1280.701@0.23.1280.701" timestamp="1587787882323" />
-    <state width="1238" height="172" key="GridCell.Tab.0.bottom" timestamp="1588620611997">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state width="1238" height="177" key="GridCell.Tab.0.bottom" timestamp="1588810392818">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
-    <state width="1238" height="172" key="GridCell.Tab.0.bottom/0.23.1280.701@0.23.1280.701" timestamp="1588620611997" />
-    <state width="1238" height="172" key="GridCell.Tab.0.center" timestamp="1588620611996">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state width="1238" height="172" key="GridCell.Tab.0.bottom/0.23.1280.701@0.23.1280.701" timestamp="1588720356341" />
+    <state width="1238" height="177" key="GridCell.Tab.0.bottom/0.23.1280.719@0.23.1280.719" timestamp="1588810392818" />
+    <state width="1238" height="177" key="GridCell.Tab.0.center" timestamp="1588810392816">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
-    <state width="1238" height="172" key="GridCell.Tab.0.center/0.23.1280.701@0.23.1280.701" timestamp="1588620611995" />
-    <state width="1238" height="172" key="GridCell.Tab.0.left" timestamp="1588620611995">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state width="1238" height="172" key="GridCell.Tab.0.center/0.23.1280.701@0.23.1280.701" timestamp="1588720356340" />
+    <state width="1238" height="177" key="GridCell.Tab.0.center/0.23.1280.719@0.23.1280.719" timestamp="1588810392816" />
+    <state width="1238" height="177" key="GridCell.Tab.0.left" timestamp="1588810392813">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
-    <state width="1238" height="172" key="GridCell.Tab.0.left/0.23.1280.701@0.23.1280.701" timestamp="1588620611995" />
-    <state width="1238" height="172" key="GridCell.Tab.0.right" timestamp="1588620611996">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state width="1238" height="172" key="GridCell.Tab.0.left/0.23.1280.701@0.23.1280.701" timestamp="1588720356339" />
+    <state width="1238" height="177" key="GridCell.Tab.0.left/0.23.1280.719@0.23.1280.719" timestamp="1588810392813" />
+    <state width="1238" height="177" key="GridCell.Tab.0.right" timestamp="1588810392817">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
-    <state width="1238" height="172" key="GridCell.Tab.0.right/0.23.1280.701@0.23.1280.701" timestamp="1588620611996" />
-    <state x="333" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1588187052170">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state width="1238" height="172" key="GridCell.Tab.0.right/0.23.1280.701@0.23.1280.701" timestamp="1588720356340" />
+    <state width="1238" height="177" key="GridCell.Tab.0.right/0.23.1280.719@0.23.1280.719" timestamp="1588810392817" />
+    <state width="1238" height="221" key="GridCell.Tab.1.bottom" timestamp="1588801414355">
+      <screen x="0" y="23" width="1280" height="719" />
+    </state>
+    <state width="1238" height="215" key="GridCell.Tab.1.bottom/0.23.1280.701@0.23.1280.701" timestamp="1588628330780" />
+    <state width="1238" height="221" key="GridCell.Tab.1.bottom/0.23.1280.719@0.23.1280.719" timestamp="1588801414355" />
+    <state width="1238" height="221" key="GridCell.Tab.1.center" timestamp="1588801414354">
+      <screen x="0" y="23" width="1280" height="719" />
+    </state>
+    <state width="1238" height="215" key="GridCell.Tab.1.center/0.23.1280.701@0.23.1280.701" timestamp="1588628330779" />
+    <state width="1238" height="221" key="GridCell.Tab.1.center/0.23.1280.719@0.23.1280.719" timestamp="1588801414354" />
+    <state width="1238" height="221" key="GridCell.Tab.1.left" timestamp="1588801414354">
+      <screen x="0" y="23" width="1280" height="719" />
+    </state>
+    <state width="1238" height="215" key="GridCell.Tab.1.left/0.23.1280.701@0.23.1280.701" timestamp="1588628330778" />
+    <state width="1238" height="221" key="GridCell.Tab.1.left/0.23.1280.719@0.23.1280.719" timestamp="1588801414354" />
+    <state width="1238" height="221" key="GridCell.Tab.1.right" timestamp="1588801414355">
+      <screen x="0" y="23" width="1280" height="719" />
+    </state>
+    <state width="1238" height="215" key="GridCell.Tab.1.right/0.23.1280.701@0.23.1280.701" timestamp="1588628330780" />
+    <state width="1238" height="221" key="GridCell.Tab.1.right/0.23.1280.719@0.23.1280.719" timestamp="1588801414355" />
+    <state x="149" y="23" width="982" height="701" key="SettingsEditor" timestamp="1588801338460">
+      <screen x="0" y="23" width="1280" height="719" />
+    </state>
+    <state x="149" y="23" width="982" height="701" key="SettingsEditor/0.23.1280.701@0.23.1280.701" timestamp="1588702924798" />
+    <state x="149" y="23" key="SettingsEditor/0.23.1280.719@0.23.1280.719" timestamp="1588801338459" />
+    <state x="333" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1588803499903">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
     <state x="333" y="206" key="com.intellij.ide.util.TipDialog/0.23.1280.701@0.23.1280.701" timestamp="1588187052170" />
+    <state x="333" y="211" key="com.intellij.ide.util.TipDialog/0.23.1280.719@0.23.1280.719" timestamp="1588803499903" />
+    <state x="366" y="274" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588702551469">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state x="366" y="274" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.701@0.23.1280.701" timestamp="1588702551469" />
+    <state x="445" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588714716887">
+      <screen x="0" y="23" width="1280" height="701" />
+    </state>
+    <state x="445" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.701@0.23.1280.701" timestamp="1588714716887" />
     <state x="320" y="23" width="639" height="701" key="find.popup" timestamp="1588277324223">
       <screen x="0" y="23" width="1280" height="701" />
     </state>
@@ -138,17 +219,32 @@
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="69" y="23" key="new project wizard/0.23.1280.701@0.23.1280.701" timestamp="1587854966307" />
-    <state x="348" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1587909706528">
-      <screen x="0" y="23" width="1280" height="701" />
+    <state x="348" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1588808242358">
+      <screen x="0" y="23" width="1280" height="719" />
     </state>
     <state x="348" y="23" key="refactoring.ChangeSignatureDialog/0.23.1280.701@0.23.1280.701" timestamp="1587909706528" />
+    <state x="348" y="23" key="refactoring.ChangeSignatureDialog/0.23.1280.719@0.23.1280.719" timestamp="1588808242358" />
     <state x="305" y="167" key="run.anything.popup" timestamp="1587918195105">
       <screen x="0" y="23" width="1280" height="701" />
     </state>
     <state x="305" y="167" key="run.anything.popup/0.23.1280.701@0.23.1280.701" timestamp="1587918195105" />
-    <state x="305" y="24" width="670" height="676" key="search.everywhere.popup" timestamp="1587929180353">
+    <state x="305" y="24" width="670" height="676" key="search.everywhere.popup" timestamp="1588627977103">
       <screen x="0" y="23" width="1280" height="701" />
     </state>
-    <state x="305" y="24" width="670" height="676" key="search.everywhere.popup/0.23.1280.701@0.23.1280.701" timestamp="1587929180353" />
+    <state x="305" y="24" width="670" height="676" key="search.everywhere.popup/0.23.1280.701@0.23.1280.701" timestamp="1588627977103" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/serdarsenturk/MovieDTO.java</url>
+          <line>13</line>
+          <properties class="com.serdarsenturk.MovieDTO" method="setPopularity">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

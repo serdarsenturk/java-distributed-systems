@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class ShortMovie extends Movie {
     private String title;
-    private int timeLength;
+    private int runtime;
     private ArrayList<String> competitions;
 
-    public ShortMovie(int id, String name, Genre genre,String title, String author, int timeLength){
-        super(id, name, genre, author, title);
-        this.timeLength = timeLength;
+    public ShortMovie(int id, String originalTitle, Genre genre,String title, int runtime){
+        super(id, originalTitle, genre, title);
+        this.runtime = runtime;
         this.competitions = new ArrayList<>();
     }
 
@@ -19,11 +19,11 @@ public class ShortMovie extends Movie {
 
 
     public String getTitle(){
-        return "Min: " + this.timeLength + this.title;
+        return "Min: " + this.runtime + this.title;
     }
 
-    public int getTimeLength(){
-        return this.timeLength;
+    public int getRuntime(){
+        return this.runtime;
     }
 
     public Iterable<String> getCompetitions(){
