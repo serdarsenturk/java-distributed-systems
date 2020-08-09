@@ -11,23 +11,12 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class DummyMovieService implements IMovieService {
 
 
     public Iterable<Movie> getAll() throws IOException, InterruptedException {
 
-        HttpClient client = HttpClient.newHttpClient();
-
-        HttpRequest req = HttpRequest.newBuilder().
-                uri(URI.create("")).
-                build();
-
-        client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
-                .thenApply(HttpResponse::body)
-                .thenAccept(System.out::println)
-                .join();
         return new ArrayList<>();
     }
 
@@ -62,12 +51,14 @@ public class DummyMovieService implements IMovieService {
                 })
                 .join();
 
-        System.out.println("Movie name: " + movieDTO.getId());
-        System.out.println("Movie name: " + movieDTO.getOriginalTitle());
-        System.out.println("Movie name: " + movieDTO.getPopularity());
-        System.out.println("Movie name: " + movieDTO.getTitle());
-        System.out.println("Movie name: " + movieDTO.getRuntime());
-        return new ShortMovie(movieDTO.getId(), movieDTO.getOriginalTitle(), Genre.Horror, movieDTO.getTitle(), movieDTO.getRuntime());
+        System.out.println("Movie id: " + movieDTO.getId());
+        System.out.println("Movie original title: " + movieDTO.getOriginalTitle());
+        System.out.println("Movie popularity: " + movieDTO.getPopularity());
+        System.out.println("Movie title: " + movieDTO.getTitle());
+        System.out.println("Movie runtime: " + movieDTO.getRuntime());
+        System.out.println("Movie revenue: " + movieDTO.getRevenue());
+
+        return new ShortMovie(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), movieDTO.getRuntime(), Genre.Horror);
     }
 
     public void deleteById(int id) {

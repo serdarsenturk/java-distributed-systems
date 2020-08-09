@@ -13,7 +13,7 @@ public abstract class Movie{
     private String author;
     private String title;
 
-    public Movie(int id, String originalTitle, Genre genre, String title){
+    public Movie(int id, String originalTitle, String title , Genre genre){
         this.id = id;
         this.originalTitle = originalTitle;
         this.genre = genre;
@@ -80,7 +80,9 @@ public abstract class Movie{
         return this.actors.containsKey(actor.getId());
     }
 
-    public abstract String getTitle();
+    public String getTitle(){
+        return this.title;
+    }
 
     public void setBudget(int budget){
         this.budget = budget;
@@ -88,5 +90,12 @@ public abstract class Movie{
 
     public int getNextMinimumBudget(){
         return this.budget + this.budget * 10 / 100;
+    }
+
+    public void setGenre(Genre genre){
+        this.genre = genre;
+    }
+    public Genre getGenre(){
+        return this.genre;
     }
 }

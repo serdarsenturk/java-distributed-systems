@@ -6,6 +6,7 @@ public class MovieDTO {
     private String originalTitle;
     private String title;
     private int runtime;
+    private int revenue;
 
     public void setId(int id){this.id = id;}
 
@@ -41,6 +42,14 @@ public class MovieDTO {
 
     public int getRuntime(){
         return this.runtime;
+    }
+
+    public void setRevenue(int revenue){
+        this.revenue = revenue;
+    }
+
+    public int getRevenue(){
+        return this.revenue;
     }
 
 }

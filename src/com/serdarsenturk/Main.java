@@ -8,9 +8,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.KeyException;
+import java.sql.*;
+
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 /*
         var actor1 = new Actor(1, "Serdar", 22);
         var actor2 = new Actor(2, "Engin", 31);
@@ -33,11 +35,16 @@ public class Main {
 
         var movie6 = new DummyMovieService();
 //        movie6.getAll();
-        movie6.getById(550);
-        movie6.getAll();
+        var x = movie6.getById(550);
+
+        var manager = new MovieManager();
+
+        var mysqlDatabase = new MySQLDatabase(); // Create inh type of IDatabase
+
+        manager.addMovie(mysqlDatabase, x); // Send to use which database and movie
+
 //        movie6.deleteById(102);
 //        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
-
 
     }
 }
