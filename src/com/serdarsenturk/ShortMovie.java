@@ -7,7 +7,7 @@ public class ShortMovie extends Movie {
     public int runtime;
     private ArrayList<String> competitions;
 
-    public ShortMovie(int id, String originalTitle, String title, int runtime, Genre genre){
+    public ShortMovie(int id, String originalTitle, String title, Genre genre,  int runtime){
         super(id, originalTitle,title, genre);
         this.runtime = runtime;
         this.competitions = new ArrayList<>();

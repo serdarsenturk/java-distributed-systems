@@ -2,9 +2,7 @@ package com.serdarsenturk;
 
 import java.io.IOException;
 
-public interface IMovieService {
-    Iterable<Movie> getAll() throws IOException, InterruptedException;
+public interface IMovieService extends IReadService, IWriteService {
     Movie getById(int id);
-    void deleteById(int id);
     void Create(Movie movie);
 }

@@ -9,6 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.KeyException;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -33,16 +34,17 @@ public class Main {
         }
 */
 
-        var movie6 = new DummyMovieService();
+        var movieService = new DummyMovieService();
 //        movie6.getAll();
-        var x = movie6.getById(550);
+        var movie = movieService.getById(550);
 
-        var manager = new MovieManager();
+        var mysqlDatabase = new SQLMovieRepository(); // Create inh type of IDatabase
+//        mysqlDatabase.create(movie);
 
-        var mysqlDatabase = new MySQLDatabase(); // Create inh type of IDatabase
-
-        manager.addMovie(mysqlDatabase, x); // Send to use which database and movie
-
+        Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
+        //mysqlDatabase.create(movie17);
+        var nkl = ((SeriesMovie) mysqlDatabase.getById(1));
+        System.out.println(nkl.getSeasons());
 //        movie6.deleteById(102);
 //        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
 

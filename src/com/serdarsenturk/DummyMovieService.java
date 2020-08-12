@@ -14,19 +14,13 @@ import java.util.ArrayList;
 
 public class DummyMovieService implements IMovieService {
 
-
-    public Iterable<Movie> getAll() throws IOException, InterruptedException {
-
-        return new ArrayList<>();
-    }
-
     public Movie getById(int id) {
 
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest req = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.themoviedb.org/3/movie/550"))
-                .header("Authorization", "")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDEyYmIwOTEwYzE3MWJjNDE5ZTkwZTJmNjhmNDdlNiIsInN1YiI6IjVlYjA1ZDRmYmYwZjYzMDAxZTdlMzBjMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OpgECeS4bynBCDMXjopEaykx3xjLtGoE3tyeBcfPT2k")
                 .header("content-type", "application/json;charset=utf-8")
                 .build();
 
@@ -58,11 +52,7 @@ public class DummyMovieService implements IMovieService {
         System.out.println("Movie runtime: " + movieDTO.getRuntime());
         System.out.println("Movie revenue: " + movieDTO.getRevenue());
 
-        return new ShortMovie(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), movieDTO.getRuntime(), Genre.Horror);
-    }
-
-    public void deleteById(int id) {
-        System.out.println("X movie deleted");
+        return new ShortMovie(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), Genre.Horror, movieDTO.getRuntime());
     }
 
     public void Create(Movie movie) {
