@@ -20,7 +20,7 @@ public class DummyMovieService implements IMovieService {
 
         HttpRequest req = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.themoviedb.org/3/movie/550"))
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDEyYmIwOTEwYzE3MWJjNDE5ZTkwZTJmNjhmNDdlNiIsInN1YiI6IjVlYjA1ZDRmYmYwZjYzMDAxZTdlMzBjMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OpgECeS4bynBCDMXjopEaykx3xjLtGoE3tyeBcfPT2k")
+                .header("Authorization", "")
                 .header("content-type", "application/json;charset=utf-8")
                 .build();
 

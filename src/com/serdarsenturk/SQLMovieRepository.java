@@ -10,7 +10,7 @@ public class SQLMovieRepository implements IMovieRepository {
 
 
     @Override
-    public void create(Movie movie) {
+    public void create(Movie movie) throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
 
@@ -19,11 +19,14 @@ public class SQLMovieRepository implements IMovieRepository {
             System.out.println("Connecting to a selected database...");
 
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            conn.setAutoCommit(false);
+
             System.out.println("Connected database successfully...");
 
             System.out.println("Inserting records into the table...");
 
-            String insertQuery = "INSERT INTO movie (id, originalTitle, title, genre) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO movie (id, originalTitle, title, genre, movieType) VALUES (?, ?, ?, ?, ?)";
 
             pstmt = conn.prepareStatement(insertQuery);
 
@@ -31,27 +34,32 @@ public class SQLMovieRepository implements IMovieRepository {
             pstmt.setString(2, movie.getOriginalTitle());
             pstmt.setString(3, movie.getTitle());
             pstmt.setObject(4, movie.getGenre().name());
+            pstmt.setInt(5, 2);
 
             pstmt.execute();
 
             if (movie instanceof ShortMovie) {
-                String shortMovieQuery = "INSERT INTO short_movie (runtime) VALUES (?, ?)";
+                String shortMovieQuery = "INSERT INTO short_movie (id, runtime) VALUES (?, ?)";
                 pstmt = conn.prepareStatement(shortMovieQuery);
 
                 pstmt.setInt(1, movie.getId());
                 pstmt.setInt(2, ((ShortMovie) movie).getRuntime());
 
                 pstmt.execute();
+
                 System.out.println("Inserted records into the table...");
             }
             if (movie instanceof SeriesMovie) {
-                String seriesMovieQuery = "INSERT INTO series_movie (episodes, seasons) VALUES (?, ?)";
+                String seriesMovieQuery = "INSERT INTO series_movie (id, episodes, seasons) VALUES (?, ?, ?)";
                 pstmt = conn.prepareStatement(seriesMovieQuery);
 
-                pstmt.setInt(1, ((SeriesMovie) movie).getEpisodes());
-                pstmt.setInt(2, ((SeriesMovie) movie).getSeasons());
+                pstmt.setInt(1, movie.getId());
+                pstmt.setInt(2, ((SeriesMovie) movie).getEpisodes());
+                pstmt.setInt(3, ((SeriesMovie) movie).getSeasons());
 
                 pstmt.execute();
+
+                //conn.commit(); // Committing data here
                 System.out.println("Inserted records into the table...");
             }
             if (movie instanceof LongTimeMovie) {
@@ -62,9 +70,15 @@ public class SQLMovieRepository implements IMovieRepository {
                 pstmt.setInt(1, ((LongTimeMovie) movie).getTimeLength());
 
                 pstmt.execute();
+
                 System.out.println("Inserted records into the table...");
             }
+            conn.commit(); // Committing data here
 
+        } catch(SQLException se){
+            // If there is any error.
+            se.printStackTrace();
+            conn.rollback();
         } catch (Exception e) {
             // Handle errors for Class.forName
             e.printStackTrace();
@@ -72,7 +86,7 @@ public class SQLMovieRepository implements IMovieRepository {
             //finally block used to close resources
             try {
                 if (pstmt != null)
-                    conn.close();
+                    pstmt.close();
             } catch (SQLException se) {
             }// do nothing
             try {
@@ -85,7 +99,7 @@ public class SQLMovieRepository implements IMovieRepository {
     }
 
     @Override
-    public Movie getById(int id) {
+    public Movie getById(int id) throws SQLException {
         Connection conn = null;
         Statement stmt = null;
 
@@ -96,11 +110,12 @@ public class SQLMovieRepository implements IMovieRepository {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("Connected database successfully...");
 
+            conn.setAutoCommit(false); // we turn-off auto-commit
+
             System.out.println("Fetching details from database...");
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            //ResultSet rs = stmt.executeQuery("SELECT * FROM movie WHERE id = '" + id +"'"); // olusturulan baglanti ifadesini result set olarak tanimladik
             ResultSet rs = stmt.executeQuery(
                     "SELECT m.id, m.originalTitle, m.title, m.genre,  m.movieType, sm.runtime, srm.seasons, srm.episodes, ltm.timeLenght " +
                             "FROM movie AS m " +
@@ -131,13 +146,25 @@ public class SQLMovieRepository implements IMovieRepository {
                 }
             }
 
+            conn.commit(); // we commit to transaction by-myself
 
         }//end try
         catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } finally {
+            //finally block used to close resources
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se) {
+            }// do nothing
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }   //end finally try
+        }   //end try
         return null;
     }
 }

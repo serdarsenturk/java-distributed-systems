@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 /*
         var actor1 = new Actor(1, "Serdar", 22);
         var actor2 = new Actor(2, "Engin", 31);
@@ -43,8 +43,9 @@ public class Main {
 
         Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
         //mysqlDatabase.create(movie17);
-        var nkl = ((SeriesMovie) mysqlDatabase.getById(1));
-        System.out.println(nkl.getSeasons());
+        var detailOfMovie17 = (mysqlDatabase.getById(88));
+
+
 //        movie6.deleteById(102);
 //        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
 
