@@ -18,7 +18,14 @@ public class SeriesMovie extends Movie {
         return this.seasons;
     }
 
+    public void setSeasons(int seasons){
+        this.seasons = seasons;
+    }
+
     public int getEpisodes(){return this.episodes;}
+    public void setEpisodes(int episodes){
+        this.episodes = episodes;
+    }
 
     public String getTitle(){
         return "Series Film" + this.title;

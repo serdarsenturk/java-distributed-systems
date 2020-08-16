@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.serdarsenturk.MovieEntity" table="movie" schema="Movies">
+        <id name="id">
+            <column name="id" sql-type="int unsigned"/>
+        </id>
+        <property name="originalTitle">
+            <column name="originalTitle" sql-type="text" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="text" not-null="true"/>
+        </property>
+        <property name="genre">
+            <column name="genre" sql-type="text" not-null="true"/>
+        </property>
+        <property name="movieType">
+            <column name="movieType" sql-type="int" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

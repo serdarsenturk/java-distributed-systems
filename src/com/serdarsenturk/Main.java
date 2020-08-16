@@ -1,6 +1,7 @@
 package com.serdarsenturk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.serdarsenturk.Movie;
+import com.sun.xml.bind.api.impl.NameConverter;
 
 import java.io.IOException;
 import java.net.URI;
@@ -11,44 +12,45 @@ import java.security.KeyException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException {
-/*
-        var actor1 = new Actor(1, "Serdar", 22);
-        var actor2 = new Actor(2, "Engin", 31);
-        var actor3 = new Actor(3, "Görkem", 21);
-        var movie2 = new ShortMovie(101, "B", Genre.Fiction, "XB", "YB",  70);
-
-        var movie3 = new LongTimeMovie(102, "C", Genre.Action, 120, "XC", "YC");
-        var movie4 = new SeriesMovie(103, "D", Genre.Horror, 5, 12, "XD", "YD");
-        try {
-            movie3.addActor(actor3);
-            movie4.addActor(actor1);
-            movie2.addActor(actor1);
-            movie2.addCompetition("K");
-            movie2.addCompetition("M");
-        }
-        catch (KeyException ex){
-            System.out.println(ex.getMessage());
-        }
-*/
-
-        var movieService = new DummyMovieService();
-//        movie6.getAll();
-        var movie = movieService.getById(550);
-
-        var mysqlDatabase = new SQLMovieRepository(); // Create inh type of IDatabase
-//        mysqlDatabase.create(movie);
-
-        Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
-        //mysqlDatabase.create(movie17);
-        var detailOfMovie17 = (mysqlDatabase.getById(88));
+//        Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
+//        mysqlDatabase.create(movie17);
+//        var detailOfMovie17 = (mysqlDatabase.getById(88));
+//
+//        HomePage.movieDetails(88);
 
 
-//        movie6.deleteById(102);
-//        movie6.Create(new SeriesMovie(5000, "Black", Genre.Action, 3, 10, "Super", "Brain Connor"));
+        StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+        Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
 
+        SessionFactory factory = meta.getSessionFactoryBuilder().build();
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+
+        // Create method in Hibernate
+        MovieEntity m1 = new MovieEntity();
+        m1.setId(118);
+        m1.setOriginalTitle("Kalk");
+        m1.setTitle("Gel");
+        m1.setGenre("Korku");
+        m1.setMovieType(2);
+
+        session.save(m1);
+
+        t.commit();
+        System.out.println("Succesfully saved");
+        factory.close();
+        session.close();
     }
 }
 
