@@ -1,5 +1,7 @@
 package com.serdarsenturk;
 
+import org.hibernate.mapping.List;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -9,17 +11,29 @@ public class ShortMovieEntity {
     private Integer id;
     private Integer runtime;
 
+
     @Id
-    @Column(name = "id", nullable = false)
-    public Integer getId() {
+    public Integer getId(){
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id){
         this.id = id;
     }
 
-    @Basic
+    public MovieEntity getMovieEntity() {
+        return movieEntity;
+    }
+
+    public void setMovieEntity(MovieEntity movieEntity) {
+        this.movieEntity = movieEntity;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private MovieEntity movieEntity;
+
     @Column(name = "runtime", nullable = true)
     public Integer getRuntime() {
         return runtime;

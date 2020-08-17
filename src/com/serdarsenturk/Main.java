@@ -1,16 +1,4 @@
 package com.serdarsenturk;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.serdarsenturk.Movie;
-import com.sun.xml.bind.api.impl.NameConverter;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.security.KeyException;
-import java.sql.*;
-import java.util.ArrayList;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,9 +8,12 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException {
 //        Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
 //        mysqlDatabase.create(movie17);
 //        var detailOfMovie17 = (mysqlDatabase.getById(88));
@@ -38,14 +29,28 @@ public class Main {
         Transaction t = session.beginTransaction();
 
         // Create method in Hibernate
-        MovieEntity m1 = new MovieEntity();
-        m1.setId(118);
-        m1.setOriginalTitle("Kalk");
-        m1.setTitle("Gel");
-        m1.setGenre("Korku");
-        m1.setMovieType(2);
+        // TODO add to at the same time series_movie class
+        // TODO Find another way merge to one-to-one relationships entities
 
-        session.save(m1);
+
+
+        ShortMovieEntity shm1 = new ShortMovieEntity();
+        MovieEntity shm2 = new MovieEntity();
+
+        shm2.setShortMovieEntity(shm1);
+        shm2.setId(12);
+        shm2.setOriginalTitle("a");
+        shm2.setTitle("K");
+        shm2.setGenre("Korku");
+        shm2.setMovieType(0);
+
+        shm1.setMovieEntity(shm2);
+        shm1.setId(12);
+        shm1.setRuntime(122);
+
+        //Basically we merge a pair of entities
+        session.merge(shm2);
+        session.merge(shm1);
 
         t.commit();
         System.out.println("Succesfully saved");

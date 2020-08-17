@@ -9,6 +9,7 @@ public class LongTimeMovieEntity {
     private Integer id;
     private Integer timeLenght;
 
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {
@@ -18,6 +19,19 @@ public class LongTimeMovieEntity {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public MovieEntity getMovieEntity() {
+        return movieEntity;
+    }
+
+    public void setMovieEntity(MovieEntity movieEntity) {
+        this.movieEntity = movieEntity;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private MovieEntity movieEntity;
 
     @Basic
     @Column(name = "timeLenght", nullable = true)

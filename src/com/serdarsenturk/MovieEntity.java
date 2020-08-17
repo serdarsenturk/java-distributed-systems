@@ -12,7 +12,8 @@ public class MovieEntity {
     private String genre;
     private Integer movieType;
 
-    @Id
+    @SequenceGenerator(name = "generator_id", sequenceName = "seq_id")
+    @GeneratedValue(generator = "generator_id")
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
@@ -22,7 +23,19 @@ public class MovieEntity {
         this.id = id;
     }
 
-    @Basic
+    public ShortMovieEntity getShortMovieEntity() {
+        return shortMovieEntity;
+    }
+
+    public void setShortMovieEntity(ShortMovieEntity shortMovieEntity) {
+        this.shortMovieEntity = shortMovieEntity;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private ShortMovieEntity shortMovieEntity;
+
     @Column(name = "originalTitle", nullable = true, length = -1)
     public String getOriginalTitle() {
         return originalTitle;
@@ -32,7 +45,6 @@ public class MovieEntity {
         this.originalTitle = originalTitle;
     }
 
-    @Basic
     @Column(name = "title", nullable = true, length = -1)
     public String getTitle() {
         return title;
@@ -42,7 +54,6 @@ public class MovieEntity {
         this.title = title;
     }
 
-    @Basic
     @Column(name = "genre", nullable = true, length = -1)
     public String getGenre() {
         return genre;
@@ -52,7 +63,6 @@ public class MovieEntity {
         this.genre = genre;
     }
 
-    @Basic
     @Column(name = "movieType", nullable = true)
     public Integer getMovieType() {
         return movieType;

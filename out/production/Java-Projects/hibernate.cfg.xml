@@ -16,7 +16,6 @@
     <property name="connection.username">root</property>
     <property name="connection.password">Unviserded1*</property>
 
-
     <!-- List of XML mapping files -->
 
     <mapping resource="LongTimeMovieEntity.hbm.xml"/>
@@ -27,7 +26,6 @@
     <mapping resource="SeriesMovieEntity.hbm.xml"/>
     <mapping class="com.serdarsenturk.ShortMovieEntity"/>
     <mapping resource="ShortMovieEntity.hbm.xml"/>
-
 
   </session-factory>
 </hibernate-configuration>

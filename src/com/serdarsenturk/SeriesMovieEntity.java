@@ -20,6 +20,19 @@ public class SeriesMovieEntity {
         this.id = id;
     }
 
+    public MovieEntity getMovieEntity() {
+        return movieEntity;
+    }
+
+    public void setMovieEntity(MovieEntity movieEntity) {
+        this.movieEntity = movieEntity;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private MovieEntity movieEntity;
+
     @Basic
     @Column(name = "seasons", nullable = true)
     public Integer getSeasons() {
