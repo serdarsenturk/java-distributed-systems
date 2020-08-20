@@ -20,12 +20,15 @@ public class Main {
 //
 //        HomePage.movieDetails(88);
 
+            //TODO Get new movie through DummyMovieService
+        var movie = new DummyMovieService();
+        ShortMovieEntity newMovie = (ShortMovieEntity) movie.getById(18);
 
-        StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-        Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
+        StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+        Metadata meta=new MetadataSources(ssr).getMetadataBuilder().build();
 
-        SessionFactory factory = meta.getSessionFactoryBuilder().build();
-        Session session = factory.openSession();
+        SessionFactory factory=meta.buildSessionFactory();
+        Session session=factory.openSession();
         Transaction t = session.beginTransaction();
 
         // Create method in Hibernate
@@ -34,22 +37,24 @@ public class Main {
         ShortMovieEntity shm1 = new ShortMovieEntity();
         MovieEntity shm2 = new MovieEntity();
 
-        shm2.setId(15);
-        shm2.setOriginalTitle("a");
-        shm2.setTitle("K");
-        shm2.setGenre("Korku");
+        shm2.setId(newMovie.getId());
+        shm2.setOriginalTitle(newMovie.getOriginalTitle());
+        shm2.setTitle(newMovie.getTitle());
+        shm2.setGenre(newMovie.getGenre());
         shm2.setMovieType(0);
-        session.save(shm2);
+        session.persist(shm2);
 
-        shm1.setId(15);
-        shm1.setRuntime(122);
-        session.save(shm1);
+        shm1.setId(newMovie.getId());
+        shm1.setRuntime(newMovie.getRuntime());
+        session.persist(shm1);
 
         t.commit();
 
         System.out.println("Succesfully saved");
         factory.close();
         session.close();
+
+
     }
 
 

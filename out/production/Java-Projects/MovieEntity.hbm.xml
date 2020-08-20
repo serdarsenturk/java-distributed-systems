@@ -20,5 +20,6 @@
         <property name="movieType">
             <column name="movieType" sql-type="int" not-null="true"/>
         </property>
+
     </class>
 </hibernate-mapping>

@@ -11,16 +11,15 @@
     <property name = "hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
     <!-- Assume test is the database name -->
-
+    <property name="hbm2ddl.auto">update</property>
     <property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/Movies</property>
     <property name="connection.username">root</property>
     <property name="connection.password">Unviserded1*</property>
-    <property name="hbm2ddl.auto">update</property>
 
     <!-- List of XML mapping files -->
 
-    <mapping resource="LongTimeMovieEntity.hbm.xml"/>
     <mapping class="com.serdarsenturk.LongTimeMovieEntity"/>
+    <mapping resource="LongTimeMovieEntity.hbm.xml"/>
     <mapping class="com.serdarsenturk.MovieEntity"/>
     <mapping resource="MovieEntity.hbm.xml"/>
     <mapping class="com.serdarsenturk.SeriesMovieEntity"/>

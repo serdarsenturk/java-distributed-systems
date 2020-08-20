@@ -4,9 +4,11 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "movie", schema = "Movies", catalog = "")
+@Table(name = "movie")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class MovieEntity {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     private String originalTitle;
     private String title;
@@ -22,9 +24,6 @@ public class MovieEntity {
         this.genre = genre;
     }
 
-    @SequenceGenerator(name = "generator_id", sequenceName = "seq_id")
-    @GeneratedValue(generator = "generator_id")
-    @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
     }
@@ -32,19 +31,6 @@ public class MovieEntity {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public ShortMovieEntity getShortMovieEntity() {
-        return shortMovieEntity;
-    }
-
-    public void setShortMovieEntity(ShortMovieEntity shortMovieEntity) {
-        this.shortMovieEntity = shortMovieEntity;
-    }
-
-    @OneToOne
-    @JoinColumn(name = "id")
-    @MapsId
-    private ShortMovieEntity shortMovieEntity;
 
     @Column(name = "originalTitle", nullable = true, length = -1)
     public String getOriginalTitle() {
@@ -85,20 +71,4 @@ public class MovieEntity {
     public static void addActor(Actor actor) {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MovieEntity that = (MovieEntity) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(originalTitle, that.originalTitle) &&
-                Objects.equals(title, that.title) &&
-                Objects.equals(genre, that.genre) &&
-                Objects.equals(movieType, that.movieType);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, originalTitle, title, genre, movieType);
-    }
 }
