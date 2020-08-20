@@ -1,5 +1,5 @@
 package com.serdarsenturk;
 
 public interface IWriteService {
-    void Create(Movie movie);
+    void Create(MovieEntity movie);
 }

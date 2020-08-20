@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DummyMovieService implements IMovieService {
 
-    public Movie getById(int id) {
+    public MovieEntity getById(int id) {
 
         HttpClient client = HttpClient.newHttpClient();
 
@@ -52,10 +52,10 @@ public class DummyMovieService implements IMovieService {
         System.out.println("Movie runtime: " + movieDTO.getRuntime());
         System.out.println("Movie revenue: " + movieDTO.getRevenue());
 
-        return new ShortMovie(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), Genre.Horror, movieDTO.getRuntime());
+        return new ShortMovieEntity(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), "Korku", movieDTO.getRuntime());
     }
 
-    public void Create(Movie movie) {
+    public void Create(MovieEntity movie) {
         System.out.println("X movie created");
     }
 }

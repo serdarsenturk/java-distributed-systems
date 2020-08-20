@@ -8,7 +8,7 @@ public class Actor {
     private int id;
     private String name;
     private int age;
-    private HashMap<Integer, Movie> movies;
+    private HashMap<Integer, MovieEntity> movies;
 
     public Actor(int id, String name, int age){
         this.id = id;
@@ -29,16 +29,16 @@ public class Actor {
         return this.id;
     }
 
-    public Iterable<Movie> getMovies(){
+    public Iterable<MovieEntity> getMovies(){
         var actorsDicValues = this.movies.values();
         return new ArrayList<>(actorsDicValues);
     }
 
-    public void addMovies(Movie movie) throws KeyException {
+    public void addMovies(MovieEntity movie) throws KeyException {
         if(movies.containsKey(movie.getId())){
             return;
         }
         this.movies.put(movie.getId(), movie);
-        movie.addActor(this);
+        MovieEntity.addActor(this);
     }
 }

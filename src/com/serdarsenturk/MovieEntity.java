@@ -6,11 +6,21 @@ import java.util.Objects;
 @Entity
 @Table(name = "movie", schema = "Movies", catalog = "")
 public class MovieEntity {
+    @Id
     private Integer id;
     private String originalTitle;
     private String title;
     private String genre;
     private Integer movieType;
+
+    public MovieEntity(){}
+
+    public MovieEntity(Integer id, String originalTitle, String title, String genre){
+        this.id = id;
+        this.originalTitle = originalTitle;
+        this.title = title;
+        this.genre = genre;
+    }
 
     @SequenceGenerator(name = "generator_id", sequenceName = "seq_id")
     @GeneratedValue(generator = "generator_id")
@@ -70,6 +80,9 @@ public class MovieEntity {
 
     public void setMovieType(Integer movieType) {
         this.movieType = movieType;
+    }
+
+    public static void addActor(Actor actor) {
     }
 
     @Override

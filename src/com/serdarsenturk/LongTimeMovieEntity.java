@@ -5,9 +5,16 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "long_time_movie", schema = "Movies", catalog = "")
-public class LongTimeMovieEntity {
+public class LongTimeMovieEntity extends MovieEntity{
     private Integer id;
     private Integer timeLenght;
+
+    public LongTimeMovieEntity(){}
+
+    public LongTimeMovieEntity(Integer id, String originalTitle, String title, String genre, Integer timeLenght){
+        super(id, originalTitle, title, genre);
+        this.timeLenght = timeLenght;
+    }
 
 
     @Id

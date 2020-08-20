@@ -29,33 +29,28 @@ public class Main {
         Transaction t = session.beginTransaction();
 
         // Create method in Hibernate
-        // TODO add to at the same time series_movie class
-        // TODO Find another way merge to one-to-one relationships entities
-
-
+        // TODO add new movie details different classes
 
         ShortMovieEntity shm1 = new ShortMovieEntity();
         MovieEntity shm2 = new MovieEntity();
 
-        shm2.setShortMovieEntity(shm1);
-        shm2.setId(12);
+        shm2.setId(15);
         shm2.setOriginalTitle("a");
         shm2.setTitle("K");
         shm2.setGenre("Korku");
         shm2.setMovieType(0);
+        session.save(shm2);
 
-        shm1.setMovieEntity(shm2);
-        shm1.setId(12);
+        shm1.setId(15);
         shm1.setRuntime(122);
-
-        //Basically we merge a pair of entities
-        session.merge(shm2);
-        session.merge(shm1);
+        session.save(shm1);
 
         t.commit();
+
         System.out.println("Succesfully saved");
         factory.close();
         session.close();
     }
-}
 
+
+}

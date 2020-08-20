@@ -7,10 +7,16 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "short_movie", schema = "Movies", catalog = "")
-public class ShortMovieEntity {
+public class ShortMovieEntity extends MovieEntity {
     private Integer id;
     private Integer runtime;
 
+    public ShortMovieEntity(){}
+
+    public ShortMovieEntity(Integer id, String originalTitle, String title, String genre, Integer runtime){
+        super(id, originalTitle, title, genre);
+        this.runtime = runtime;
+    }
 
     @Id
     public Integer getId(){
@@ -33,6 +39,7 @@ public class ShortMovieEntity {
     @JoinColumn(name = "id")
     @MapsId
     private MovieEntity movieEntity;
+
 
     @Column(name = "runtime", nullable = true)
     public Integer getRuntime() {
