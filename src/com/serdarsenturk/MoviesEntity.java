@@ -8,12 +8,12 @@ import java.util.Objects;
 @Entity
 @Table(name="short_movie")
 @PrimaryKeyJoinColumn(name="id")
-public class ShortMovieEntity extends MovieEntity {
+public class MoviesEntity extends MovieEntity {
     private Integer runtime;
 
-    public ShortMovieEntity(){}
+    public MoviesEntity(){}
 
-    public ShortMovieEntity(Integer id, String originalTitle, String title, String genre, Integer runtime){
+    public MoviesEntity(Integer id, String originalTitle, String title, String genre, Integer runtime){
         super(id, originalTitle, title, genre);
         this.runtime = runtime;
     }

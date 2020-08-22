@@ -1,5 +1,5 @@
 package com.serdarsenturk;
 
-public interface IReadService {
-    MovieEntity getById(int id);
+public interface IReadService extends IMovieRepository {
+    abstract MovieEntity getById(int id);
 }

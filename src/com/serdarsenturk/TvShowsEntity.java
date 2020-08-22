@@ -6,13 +6,13 @@ import java.util.Objects;
 @Entity
 @Table(name="series_movie")
 @PrimaryKeyJoinColumn(name="id")
-public class SeriesMovieEntity extends MovieEntity {
+public class TvShowsEntity extends MovieEntity {
     private Integer seasons;
     private Integer episodes;
 
-    public SeriesMovieEntity(){}
+    public TvShowsEntity(){}
 
-    public SeriesMovieEntity(Integer id, String originalTitle, String title, String genre, Integer seasons, Integer episodes){
+    public TvShowsEntity(Integer id, String originalTitle, String title, String genre, Integer seasons, Integer episodes){
         super(id, originalTitle, title, genre);
         this.seasons = seasons;
         this.episodes = episodes;

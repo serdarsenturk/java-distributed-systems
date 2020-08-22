@@ -10,7 +10,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class DummyMovieService implements IMovieService {
+public class DummyMovieService implements IMovieService{
 
     public MovieEntity getById(int id) {
 
@@ -18,7 +18,7 @@ public class DummyMovieService implements IMovieService {
 
         HttpRequest req = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.themoviedb.org/3/movie/550"))
-                .header("Authorization", "")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDEyYmIwOTEwYzE3MWJjNDE5ZTkwZTJmNjhmNDdlNiIsInN1YiI6IjVlYjA1ZDRmYmYwZjYzMDAxZTdlMzBjMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OpgECeS4bynBCDMXjopEaykx3xjLtGoE3tyeBcfPT2k")
                 .header("content-type", "application/json;charset=utf-8")
                 .build();
 
@@ -50,10 +50,12 @@ public class DummyMovieService implements IMovieService {
         System.out.println("Movie runtime: " + movieDTO.getRuntime());
         System.out.println("Movie revenue: " + movieDTO.getRevenue());
 
-        return new ShortMovieEntity(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), "Korku", movieDTO.getRuntime());
+
+        return new MoviesEntity(movieDTO.getId(), movieDTO.getOriginalTitle(), movieDTO.getTitle(), "Action", movieDTO.getRuntime());
     }
 
-    public void Create(MovieEntity movie) {
+    public void create(MovieEntity movie) {
         System.out.println("X movie created");
     }
+
 }

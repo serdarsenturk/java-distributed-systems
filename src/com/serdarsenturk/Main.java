@@ -22,7 +22,7 @@ public class Main {
 
             //TODO Get new movie through DummyMovieService
         var movie = new DummyMovieService();
-        ShortMovieEntity newMovie = (ShortMovieEntity) movie.getById(18);
+        MoviesEntity newMovie = (MoviesEntity) movie.getById(18);
 
         StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta=new MetadataSources(ssr).getMetadataBuilder().build();
@@ -34,7 +34,7 @@ public class Main {
         // Create method in Hibernate
         // TODO add new movie details different classes
 
-        ShortMovieEntity shm1 = new ShortMovieEntity();
+        MoviesEntity shm1 = new MoviesEntity();
         MovieEntity shm2 = new MovieEntity();
 
         shm2.setId(newMovie.getId());
@@ -56,6 +56,4 @@ public class Main {
 
 
     }
-
-
 }

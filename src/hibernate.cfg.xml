@@ -18,14 +18,12 @@
 
     <!-- List of XML mapping files -->
 
-    <mapping class="com.serdarsenturk.LongTimeMovieEntity"/>
-    <mapping resource="LongTimeMovieEntity.hbm.xml"/>
     <mapping class="com.serdarsenturk.MovieEntity"/>
     <mapping resource="MovieEntity.hbm.xml"/>
-    <mapping class="com.serdarsenturk.SeriesMovieEntity"/>
-    <mapping resource="SeriesMovieEntity.hbm.xml"/>
-    <mapping class="com.serdarsenturk.ShortMovieEntity"/>
-    <mapping resource="ShortMovieEntity.hbm.xml"/>
+    <mapping class="com.serdarsenturk.TvShowsEntity"/>
+    <mapping resource="TvShowsEntity.hbm.xml"/>
+    <mapping class="com.serdarsenturk.MoviesEntity"/>
+    <mapping resource="MoviesEntity.hbm.xml"/>
 
   </session-factory>
 </hibernate-configuration>
