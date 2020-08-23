@@ -4,12 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.serdarsenturk.MoviesEntity" table="short_movie" schema="Movies">
+    <class name="com.serdarsenturk.MoviesEntity" table="movies" schema="Movies">
         <id name="id">
             <column name="id" sql-type="int unsigned"/>
         </id>
         <property name="runtime">
             <column name="runtime" sql-type="int" not-null="true"/>
+        </property>
+        <property name="revenue">
+            <column name="revenue" sql-type="int" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>
