@@ -7,21 +7,6 @@ public class MovieDTO {
     private String title;
     private int runtime;
     private int revenue;
-    private int episodeRunTime;
-    private int numberOfEpisodes;
-    private int numberOfSeasons;
-
-    public int getEpisodeRunTime() {
-        return this.episodeRunTime;
-    }
-
-    public int getNumberOfEpisodes() {
-        return this.numberOfEpisodes;
-    }
-
-    public int getNumberOfSeasons() {
-        return this.numberOfSeasons;
-    }
 
     public int getId(){return this.id;}
 

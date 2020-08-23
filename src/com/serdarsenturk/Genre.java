@@ -5,6 +5,5 @@ public enum Genre {
     Action,
     Fiction,
     Horror,
-    Thriller,
-    Comedy
+    Thriller
 }

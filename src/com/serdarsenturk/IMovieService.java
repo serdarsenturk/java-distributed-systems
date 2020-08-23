@@ -1,9 +1,8 @@
 package com.serdarsenturk;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public interface IMovieService extends IReadService, IWriteService {
-    MovieEntity getById(int id) throws IOException;
+    MovieEntity getById(int id);
     void create(MovieEntity movie);
 }
