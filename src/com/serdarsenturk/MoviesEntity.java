@@ -1,9 +1,6 @@
 package com.serdarsenturk;
 
-import org.hibernate.mapping.List;
-
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name="movies")
@@ -12,13 +9,17 @@ public class MoviesEntity extends MovieEntity {
     private Integer runtime;
     private Integer revenue;
 
-
     public MoviesEntity(){}
 
-    public MoviesEntity(Integer id, String originalTitle, String title, String genre, Integer runtime, Integer revenue){
-        super(id, originalTitle, title, genre);
+    public MoviesEntity(Integer id, String originalTitle, String title, String genre, String originalLanguage, Float voteAverage, Integer runtime, Integer revenue){
+        super(id, originalTitle, title, genre, originalLanguage, voteAverage );
         this.runtime = runtime;
         this.revenue = revenue;
+    }
+
+    @Override
+    public String getTitle() {
+        return "Movie";
     }
 
     @Column(name = "runtime", nullable = true)

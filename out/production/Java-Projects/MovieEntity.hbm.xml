@@ -9,17 +9,22 @@
             <column name="id" sql-type="int unsigned"/>
         </id>
         <property name="originalTitle">
-            <column name="originalTitle" sql-type="text" not-null="true"/>
+            <column name="originalTitle" sql-type="text" not-null="false"/>
         </property>
         <property name="title">
-            <column name="title" sql-type="text" not-null="true"/>
+            <column name="title" sql-type="text" not-null="false"/>
         </property>
         <property name="genre">
-            <column name="genre" sql-type="text" not-null="true"/>
+            <column name="genre" sql-type="text" not-null="false"/>
+        </property>
+        <property name="originalLanguage">
+            <column name="originalLanguage" sql-type="text" not-null="false"/>
+        </property>
+        <property name="voteAverage">
+            <column name="voteAverage" sql-type="int" not-null="false"/>
         </property>
         <property name="movieType">
-            <column name="movieType" sql-type="int" not-null="true"/>
+            <column name="movieType" sql-type="int" not-null="false"/>
         </property>
-
     </class>
 </hibernate-mapping>

@@ -9,10 +9,10 @@
             <column name="id" sql-type="int unsigned"/>
         </id>
         <property name="runtime">
-            <column name="runtime" sql-type="int" not-null="true"/>
+            <column name="runtime" sql-type="int" not-null="false"/>
         </property>
         <property name="revenue">
-            <column name="revenue" sql-type="int" not-null="true"/>
+            <column name="revenue" sql-type="int" not-null="false"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -1,7 +1,12 @@
 package com.serdarsenturk;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDTO {
+
     private int id;
+    private String originalName;
     private int popularity;
     private String originalTitle;
     private String title;
@@ -10,6 +15,12 @@ public class MovieDTO {
     private int episodeRunTime;
     private int numberOfEpisodes;
     private int numberOfSeasons;
+    private String originalLanguage;
+    private Float voteAverage;
+
+    public String getOriginalName(){
+        return this.originalName;
+    }
 
     public int getEpisodeRunTime() {
         return this.episodeRunTime;
@@ -43,6 +54,14 @@ public class MovieDTO {
 
     public int getRevenue(){
         return this.revenue;
+    }
+
+    public String getOriginalLanguage() {
+        return originalLanguage;
+    }
+
+    public Float getVoteAverage() {
+        return voteAverage;
     }
 
 }

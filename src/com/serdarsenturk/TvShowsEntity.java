@@ -1,7 +1,6 @@
 package com.serdarsenturk;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name="tv_shows")
@@ -13,11 +12,16 @@ public class TvShowsEntity extends MovieEntity {
 
     public TvShowsEntity(){}
 
-    public TvShowsEntity(Integer id, String originalTitle, String title, String genre, Integer seasons, Integer episodes, Integer episodesRuntime){
-        super(id, originalTitle, title, genre);
+    public TvShowsEntity(Integer id, String originalTitle, String title, String genre, String originalLanguage, Float voteAverage, Integer seasons, Integer episodes, Integer episodesRuntime){
+        super(id, originalTitle, title, genre, originalLanguage, voteAverage);
         this.seasons = seasons;
         this.episodes = episodes;
         this.episodesRuntime = episodesRuntime;
+    }
+
+    @Override
+    public String getTitle() {
+        return "TvShow";
     }
 
     @Column(name = "seasons", nullable = true)
@@ -38,7 +42,7 @@ public class TvShowsEntity extends MovieEntity {
         this.episodes = episodes;
     }
 
-    @Column(name = "episodesRuntime", nullable = true)
+    @Column(name = "episodesRuntime")
     public Integer getEpisodesRuntime(){return episodesRuntime;}
 
     public void setEpisodesRuntime(Integer episodesRuntime){this.episodesRuntime = episodesRuntime;}

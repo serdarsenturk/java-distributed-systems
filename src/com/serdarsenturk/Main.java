@@ -14,17 +14,6 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException {
-//        Movie movie17 = new SeriesMovie(88, "Nebilem", "A", Genre.Action, 18, 5);
-//        mysqlDatabase.create(movie17);
-//        var detailOfMovie17 = (mysqlDatabase.getById(88));
-//
-//        HomePage.movieDetails(88);
-
-        //TODO Get new movie through DummyMovieService
-//        var movie = new DummyMovieService();
-//        MoviesEntity newMovie = (MoviesEntity) movie.getById(3);
-
-        String query = "https://api.themoviedb.org/3/movie/550?api_key=1412bb0910c171bc419e90e2f68f47e6&language=en-US";
 
         try{
             StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
@@ -33,12 +22,13 @@ public class Main {
             SessionFactory factory=meta.buildSessionFactory();
             Session session=factory.openSession();
             Transaction t = session.beginTransaction();
-            var dummy = new DummyMovieService(query);
+            var dummy = new DummyMovieService();
 
-            if(query.contains("movie")){
-                MoviesEntity newMovie = (MoviesEntity) dummy.getById(5);
-                // Create method in Hibernate
-                // TODO add new movie details different classes though one-to-one rel.
+            //Dummy code
+            var kkk = dummy.getById(110);
+
+            if(kkk instanceof MoviesEntity){
+                MoviesEntity newMovie = (MoviesEntity) dummy.getById(110);
 
                 MoviesEntity shm1 = new MoviesEntity();
                 MovieEntity shm2 = new MovieEntity();
@@ -47,6 +37,8 @@ public class Main {
                 shm2.setOriginalTitle(newMovie.getOriginalTitle());
                 shm2.setTitle(newMovie.getTitle());
                 shm2.setGenre(newMovie.getGenre());
+                shm2.setOriginalLanguage(newMovie.getOriginalLanguage());
+                shm2.setVoteAverage(newMovie.getVoteAverage());
                 shm2.setMovieType(0);
                 session.persist(shm2);
 
@@ -62,8 +54,8 @@ public class Main {
                 session.close();
 
             }
-            else if (query.contains("tv")){
-                TvShowsEntity newTvShow = (TvShowsEntity) dummy.getById(5);
+            if (kkk instanceof TvShowsEntity){
+                TvShowsEntity newTvShow = (TvShowsEntity) dummy.getById(110);
 
                 TvShowsEntity tkm1 = new TvShowsEntity();
                 MovieEntity tkm2 = new MovieEntity();
@@ -72,15 +64,18 @@ public class Main {
                 tkm2.setOriginalTitle(newTvShow.getOriginalTitle());
                 tkm2.setTitle(newTvShow.getTitle());
                 tkm2.setGenre(newTvShow.getGenre());
-                tkm2.setMovieType(newTvShow.getMovieType());
+                tkm2.setOriginalLanguage(newTvShow.getOriginalLanguage());
+                tkm2.setVoteAverage(newTvShow.getVoteAverage());
+                tkm2.setMovieType(1);
 
-                session.persist(tkm2);
+                session.save(tkm2);
 
+                tkm1.setId(newTvShow.getId());
                 tkm1.setEpisodes(newTvShow.getEpisodes());
                 tkm1.setSeasons(newTvShow.getSeasons());
                 tkm1.setEpisodesRuntime(newTvShow.getEpisodesRuntime());
 
-                session.persist(tkm1);
+                session.save(tkm1);
 
                 t.commit();
 
