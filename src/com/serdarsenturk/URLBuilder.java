@@ -41,9 +41,4 @@ class URLBuilder {
                 params.toString(), null);
         return uri.toURL().toString();
     }
-
-    String getRelativeURL() throws URISyntaxException, MalformedURLException {
-        URI uri = new URI(null, null, folders.toString(), params.toString(), null);
-        return uri.toString();
-    }
 }

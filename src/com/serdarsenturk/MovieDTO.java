@@ -2,6 +2,9 @@ package com.serdarsenturk;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDTO {
 
@@ -17,7 +20,7 @@ public class MovieDTO {
     private int numberOfSeasons;
     private String originalLanguage;
     private Float voteAverage;
-
+    private ArrayList<String> results;
     public String getOriginalName(){
         return this.originalName;
     }
