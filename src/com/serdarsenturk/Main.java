@@ -5,29 +5,11 @@ import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException, URISyntaxException, KeyManagementException, NoSuchAlgorithmException, TimeoutException {
-        MainPage.index();
-
-        QueueConsumer consumer = new QueueConsumer("queue");
-        Thread consumerThread = new Thread(consumer);
-        consumerThread.start();
-
-        Producer producer = new Producer("queue");
-
-        for(int i = 0; i < 10000; i++){
-            HashMap message = new HashMap();
-            message.put("Message number", i);
-            producer.sendMessage(message);
-            System.out.println("Message number" + i + "sent");
-        }
-
-
-
-
+    public static void main(String[] args) throws InterruptedException, ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException, URISyntaxException, KeyManagementException, NoSuchAlgorithmException, TimeoutException, IOException {
+        MainPage.addComment();
 
 //        try{
 //            StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();

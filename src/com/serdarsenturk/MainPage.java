@@ -1,9 +1,12 @@
 package com.serdarsenturk;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
+import java.util.concurrent.TimeoutException;
 
 public class MainPage {
 
@@ -46,4 +49,12 @@ public class MainPage {
         }
     }
 
+    public static void addComment() throws InterruptedException, NoSuchAlgorithmException, KeyManagementException, TimeoutException, URISyntaxException, IOException {
+        System.out.println("Add your comment : ");
+        Scanner console = new Scanner(System.in);
+        String comment = console.next();
+
+        DemoProducer.MovieProducer(comment);
+        DemoConsumer.demoConsumer();
+    }
 }
