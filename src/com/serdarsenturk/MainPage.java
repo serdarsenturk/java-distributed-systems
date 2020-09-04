@@ -55,6 +55,6 @@ public class MainPage {
         String comment = console.next();
 
         DemoProducer.MovieProducer(comment);
-        DemoConsumer.demoConsumer();
+
     }
 }
