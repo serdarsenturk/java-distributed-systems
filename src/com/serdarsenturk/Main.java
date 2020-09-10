@@ -9,7 +9,10 @@ import java.util.concurrent.TimeoutException;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException, URISyntaxException, KeyManagementException, NoSuchAlgorithmException, TimeoutException, IOException {
-        MainPage.addComment();
+        for(int i=0; i<10; i++){
+            MainPage.addComment();
+        }
+        System.exit(0);
 
 //        try{
 //            StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
