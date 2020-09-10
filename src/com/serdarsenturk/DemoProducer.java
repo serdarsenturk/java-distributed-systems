@@ -36,26 +36,6 @@ public class DemoProducer {
 
             System.out.println(" [x] Sent Your Comment : '" + comment + "'");
 
-//            channel.exchangeDeclare(EX, BuiltinExchangeType.DIRECT);
-//
-//            channel.basicPublish(EX, "one", null, comment.getBytes("UTF-8"));
-//            channel.basicPublish(EX, "two", null, comment.getBytes("UTF-8"));
-
-//            channel.basicPublish(EX, "", null, Mail.getBytes("UTF-8"));
-//            channel.basicPublish(EX, "", null, AuditLog.getBytes("UTF-8"));
-
-
-//        for (int i=0; i < 10; i++){
-//            String message = "Hello world" + i;
-//            if (i%2 == 0){
-//                channel.basicPublish(EX, K1, null, message.getBytes());
-//                System.out.println(K1 + "Message Sent: " + me ssage);
-//            }else {
-//                channel.basicPublish(EX, K2, null, message.getBytes());
-//                System.out.println(K2 + "Message Sent :" + message);
-//            }
-//            Thread.sleep(1000);
-//        }
         }
     }
 }
